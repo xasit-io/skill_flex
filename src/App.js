@@ -2,6 +2,7 @@ import Home from "./page/Home/Home";
 import Jobs from "./page/Jobs/Jobs";
 import React, { useState } from "react";
 import Email from "./screens/email/Email";
+import Profile from "./page/profile/Profile";
 import { Routes, Route } from "react-router-dom";
 import JobDetail from "./page/Jobs/[id]/JobDetail";
 import Questions from "./screens/questions/Questions";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/jobs/:id" element={<JobDetail />} />
         <Route path="/careerlisting" element={<CareerListing />} />
+        <Route path="/profile" element={<Profile />} />
 
         <Route path="*" element={
           <>

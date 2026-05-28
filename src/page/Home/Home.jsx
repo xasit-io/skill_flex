@@ -7,17 +7,13 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header.jsx";
 import Arrows from "../../components/Arrows.jsx";
 import Sidebar from "../../components/Sidebar.jsx";
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import { jobsData, jobCards } from "../../data.js";
 import briefcase from "../../assests/briefcase.svg";
 import SearchBar from "../../components/SearchBar.jsx";
 import PageHeader from "../../components/PageHeader.jsx";
 import questions from "../../screens/questions/QuestionDisplay";
-import { jobsData, jobCards } from "../../data.js";
-import {
-    roles as defaultRoles,
-    hotJobs as defaultHotJobs,
-    careerPaths as defaultCareerPaths,
-} from "../../data.js";
+import React, { useEffect, useState, useRef, useCallback } from "react";
+import { roles as defaultRoles, hotJobs as defaultHotJobs, careerPaths as defaultCareerPaths, } from "../../data.js";
 
 /* ─── constants ─────────────────────────────────────────── */
 const CARD_WIDTH = 370;
@@ -46,21 +42,12 @@ function useSlider() {
 /* ─── Play icon (shared) ─────────────────────────────────── */
 const PlayIcon = () => (
     <svg width="12" height="12" viewBox="0 0 11 11" fill="none" aria-hidden="true">
-        <path
-            d="M1.70508 5.11474V3.59752C1.70508 1.71377 3.03904 0.942378 4.67133 1.88425L5.98825 2.64286L7.30516 3.40147C8.93745 4.34334 8.93745 5.88613 7.30516 6.828L5.98825 7.58662L4.67133 8.34523C3.03904 9.2871 1.70508 8.5157 1.70508 6.63196V5.11474Z"
-            stroke="#101010"
-            strokeWidth="1.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        />
+        <path d="M1.70508 5.11474V3.59752C1.70508 1.71377 3.03904 0.942378 4.67133 1.88425L5.98825 2.64286L7.30516 3.40147C8.93745 4.34334 8.93745 5.88613 7.30516 6.828L5.98825 7.58662L4.67133 8.34523C3.03904 9.2871 1.70508 8.5157 1.70508 6.63196V5.11474Z" stroke="#101010" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
 );
 
 const GradientButton = ({ onClick, children, className = "" }) => (
-    <button
-        onClick={onClick}
-        className={`group relative flex w-full min-h-[44px] items-center justify-center overflow-hidden rounded-full border-2 border-[#75E07D] bg-[#21231D] py-3 transition-all duration-300 hover:scale-[1.02] active:scale-95 ${className}`}
-    >
+    <button onClick={onClick} className={`group relative flex w-full min-h-[44px] items-center justify-center overflow-hidden rounded-full border-2 border-[#75E07D] bg-[#21231D] py-3 transition-all duration-300 hover:scale-[1.02] active:scale-95 ${className}`} >
         <span className="absolute inset-0 origin-left scale-x-0 bg-gradient-to-r from-[#9FE870] to-[#15CF9D] transition-transform duration-500 ease-out group-hover:scale-x-100" />
         <span className="relative z-10 font-space-grotesk font-semibold bg-gradient-to-r from-[#9FE870] to-[#15CF9D] bg-clip-text text-transparent transition-all duration-500 group-hover:text-[#21231D] group-hover:[background:none]">
             {children}
@@ -139,7 +126,6 @@ const Home = ({
                             </article>
                         ))}
                     </div>
-                    {/* ── quiz gate overlay ── */}
                     {!quizDone && (
                         <div className="absolute inset-0 z-50 flex items-center justify-center max-w-[1200px] mx-auto rounded-2xl overflow-hidden">
                             <div className="absolute inset-0 backdrop-blur-[20px]" />
@@ -301,7 +287,6 @@ const Home = ({
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
