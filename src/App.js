@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./page/Home/Home";
+import Jobs from "./page/Jobs/Jobs";
+import React, { useState } from "react";
+import Email from "./screens/email/Email";
+import { Routes, Route } from "react-router-dom";
+import JobDetail from "./page/Jobs/[id]/JobDetail";
+import Questions from "./screens/questions/Questions";
+import Startscreen from "./screens/startscreen/Startscreen";
+import LearningPath from "./page/LearningPath/learningpath";
+import Verification from "./screens/verification/Verification";
+import CareerListing from "./page/careerlisting/CareerListing";
+import CareerDetails from "./page/CareerDetails/[id]/careerdetails";
+
 
 function App() {
+  const [page, setPage] = useState("Startscreen");
+  const [emailData, setEmailData] = useState("");
+
+  const goTo = (nextPage, data) => {
+    if (data?.email) setEmailData(data.email);
+    setPage(nextPage);
+  };
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/careerdetails/:id" element={<CareerDetails />} />
+        <Route path="/questions" element={<Questions />} />
+
+        <Route path="/learningpath" element={<LearningPath />} />
+        <Route path="/jobs" element={<Jobs />} />
+        <Route path="/jobs/:id" element={<JobDetail />} />
+        <Route path="/careerlisting" element={<CareerListing />} />
+
+        <Route path="*" element={
+          <>
+            {page === "Startscreen" && <Startscreen goTo={goTo} />}
+            {page === "Questions" && <Questions goTo={goTo} />}
+            {page === "Email" && <Email goTo={goTo} />}
+            {page === "Verification" && <Verification email={emailData} goTo={goTo} />}
+          </>
+        } />
+      </Routes>
+    </>
+
   );
 }
 
