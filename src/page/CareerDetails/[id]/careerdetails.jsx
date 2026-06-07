@@ -13,12 +13,10 @@ import { workDayData as defaultWorkDayData, popularDesigners as defaultPopularDe
 // Helper component to resolve the previously undefined GradientButton
 function GradientButton({ onClick, children, className = "" }) {
   return (
-    <button onClick={onClick} className={`group relative w-full rounded-full p-[2px] bg-gradient-to-r from-[#9FE870] to-[#15CF9D] transition-all duration-300 ease-out hover:-translate-y-[2px] active:opacity-75 outline-none ${className}`} >
-      <span className="relative block overflow-hidden rounded-full bg-[#121511] px-4 py-2.5 text-center transition-colors duration-300">
-        <span className="absolute top-0 -left-[100%] h-full w-[10px] bg-[#9FE870] opacity-40 shadow-[0_0_20px_10px_#9FE870] transition-all duration-700 ease-in-out group-hover:left-[120%] skew-x-[-20deg]"></span>
-        <span className="relative z-10 bg-gradient-to-r from-[#9FE870] to-[#15CF9D] bg-clip-text text-transparent text-sm font-bold font-space-grotesk tracking-wide">
-          {children}
-        </span>
+    <button onClick={onClick} className={`group relative flex w-full min-h-[44px] items-center justify-center overflow-hidden rounded-full border-2 border-[#75E07D] bg-[#21231D] py-3 transition-all duration-300 hover:scale-[1.02] active:scale-95 ${className}`} >
+      <span className="absolute inset-0 origin-left scale-x-0 bg-gradient-to-r from-[#9FE870] to-[#15CF9D] transition-transform duration-500 ease-out group-hover:scale-x-100" />
+      <span className="relative z-10 font-space-grotesk font-semibold bg-gradient-to-r from-[#9FE870] to-[#15CF9D] bg-clip-text text-transparent transition-all duration-500 group-hover:text-[#21231D] group-hover:[background:none]">
+        {children}
       </span>
     </button>
   );
