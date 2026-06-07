@@ -100,10 +100,10 @@ const Home = ({
                     ROLE CARDS
                     ══════════════════════════════════════════ */}
                 <section className="relative w-full mt-5 md:mt-10 transition-all duration-300">
-                    <div className={` flex flex-wrap gap-3 md:gap-6 justify-center max-w-[1200px] px-3 md:px-4 mx-auto transition-all duration-300 ${!quizDone ? "pointer-events-none select-none" : ""} `} >
-                        {roles.map((role, i) => (
+                    <div className="flex flex-wrap gap-3 md:gap-5 justify-center max-w-[1200px] px-3 md:px-4 mx-auto transition-all duration-300" >
+                        {roles.slice(0, 3).map((role, i) => (
                             <article key={i} className="p-3 md:p-5 rounded-2xl shadow-xl w-full sm:max-w-[360px]" style={{ backgroundColor: role.cardBg }} >
-                                <h1 className="font-space-grotesk font-bold pb-3 md:pb-4 flex justify-center text-[21px] md:text-[32px] leading-snug text-center"> {role.title} </h1>
+                                <h1 className="font-space-grotesk font-bold pb-3 md:pb-4 flex justify-center text-[21px] md:text-[30px] leading-snug text-center"> {role.title} </h1>
                                 <div className="flex gap-2 md:gap-4 mb-3 md:mb-4">
                                     {[
                                         { label: "Yearly Salary", value: `💰 ${role.salary}` },
@@ -126,6 +126,7 @@ const Home = ({
                             </article>
                         ))}
                     </div>
+
                     {!quizDone && (
                         <div className="absolute inset-0 z-50 flex items-center justify-center max-w-[1200px] mx-auto rounded-2xl overflow-hidden">
                             <div className="absolute inset-0 backdrop-blur-[20px]" />

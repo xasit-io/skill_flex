@@ -6,7 +6,6 @@ import imagebl from "../../assests/imagebl.svg";
 import Header from "../../components/Header.jsx";
 import Sidebar from "../../components/Sidebar.jsx";
 import briefcase from "../../assests/briefcase.svg";
-import Checkboxes from "../../assests/Checkboxes.svg";
 import designbook from "../../assests/designbook.svg";
 import checkcircle from "../../assests/checkcircle.svg";
 import fundamentals from "../../assests/fundamentals.svg";
@@ -96,7 +95,7 @@ function LearningPath() {
                                             </div>
                                         </div>
                                         <div className="w-[64px] h-[64px] sm:w-[90px] sm:h-[90px] md:w-[120px] md:h-[120px] rounded-lg overflow-hidden border border-[#2C3828] flex-shrink-0">
-                                            <img src={fundamentals} alt="UX design essentials image" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                                            <img src={fundamentals} alt="UX design essentials" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                                         </div>
                                     </div>
                                     <div className="mt-4 pl-0 sm:pl-[34px] space-y-4">

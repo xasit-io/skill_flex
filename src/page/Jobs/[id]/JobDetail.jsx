@@ -9,15 +9,12 @@ import hotel from "../../../assests/hotel.svg";
 import Logo from "../../../assests/Logo.svg";
 
 import { useState, useMemo } from "react";
-import { useNavigate } from "react-router-dom";
 
 import down2 from "../../../assests/down2.svg";
 import search from "../../../assests/search.svg";
 import { dropdownData, jobs } from "../../../data.js";
 
 export default function JobDetail() {
-    const navigate = useNavigate();
-
     // Search and dynamic filtering states
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedLocation, setSelectedLocation] = useState("Select location");
